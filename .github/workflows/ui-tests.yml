@@ -35,15 +35,9 @@ jobs:
           playwright install
 
       - name: Run Playwright tests with report
-        run: dotnet test NASA.UI.Tests --logger "trx;LogFileName=ui-results.trx" --results-directory TestResults --verbosity normal
+        run: dotnet test NASA.UI.Tests --logger "trx;LogFileName=ui-results.trx" --results-directory TestResults
         env:
           HEADLESS: true
-
-      - name: List test results
-        run: ls -la TestResults
-
-      - name: Check .trx file content
-        run: cat TestResults/ui-results.trx
 
       - name: Install ReportGenerator
         run: dotnet tool install -g dotnet-reportgenerator-globaltool
