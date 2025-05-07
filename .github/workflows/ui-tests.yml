@@ -22,13 +22,17 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore NASA.UI.Tests
 
-      - name: Install Playwright dependencies
+      - name: Install Playwright CLI globally
+        run: dotnet tool install --global Microsoft.Playwright.CLI
+
+      - name: Add .dotnet/tools to PATH
+        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
+      - name: Build and install Playwright
         run: |
-          cd NASA.UI.Tests
-          dotnet build
-          dotnet tool restore
+          dotnet build NASA.UI.Tests
+          export PATH="$PATH:$HOME/.dotnet/tools"
           playwright install
-          pwsh bin/Debug/net8.0/playwright.ps1 install
 
       - name: Run Playwright tests with report
         run: dotnet test NASA.UI.Tests --logger "trx;LogFileName=ui-results.trx" --results-directory TestResults
