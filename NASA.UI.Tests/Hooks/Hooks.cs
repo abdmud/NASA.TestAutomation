@@ -20,9 +20,11 @@ namespace NASA.UI.Tests.Hooks
         public static async Task SetupBrowser()
         {
             _playwright = await Playwright.CreateAsync();
+            var headlessEnv = Environment.GetEnvironmentVariable("HEADLESS");
+            bool isHeadless = string.IsNullOrEmpty(headlessEnv) || headlessEnv.ToLower() != "false";
             _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
             {
-                Headless = false
+                Headless = isHeadless
             });
         }
 
