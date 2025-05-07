@@ -25,6 +25,9 @@ jobs:
       - name: Install Playwright dependencies
         run: |
           cd NASA.UI.Tests
+          dotnet build
+          dotnet tool restore
+          playwright install
           pwsh bin/Debug/net8.0/playwright.ps1 install
 
       - name: Run Playwright tests with report
@@ -41,9 +44,3 @@ jobs:
         with:
           name: ui-test-report
           path: TestResults/html
-
-      - name: Upload Playwright screenshots (optional)
-        uses: actions/upload-artifact@v4
-        with:
-          name: ui-screenshots
-          path: NASA.UI.Tests/bin/Debug/net8.0/playwright-report
