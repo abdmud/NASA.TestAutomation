@@ -35,15 +35,21 @@ jobs:
           playwright install
 
       - name: Run Playwright tests with report
-        run: dotnet test NASA.UI.Tests --logger "trx;LogFileName=ui-results.trx" --results-directory TestResults
+        run: dotnet test NASA.UI.Tests --logger "trx;LogFileName=ui-results.trx" --results-directory TestResults --verbosity normal
         env:
           HEADLESS: true
+
+      - name: List test results
+        run: ls -la TestResults
+
+      - name: Check .trx file content
+        run: cat TestResults/ui-results.trx
 
       - name: Install ReportGenerator
         run: dotnet tool install -g dotnet-reportgenerator-globaltool
 
-      - name: Generate HTML report
-        run: reportgenerator -reports:TestResults/ui-results.trx -targetdir:TestResults/html -reporttypes:Html
+      - name: Generate HTML and Text Summary report
+        run: reportgenerator -reports:TestResults/ui-results.trx -targetdir:TestResults/html -reporttypes:Html;TextSummary
 
       - name: Upload HTML test report
         uses: actions/upload-artifact@v4
