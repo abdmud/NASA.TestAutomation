@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NASA.UI.Tests", "NASA.UI.Tests\NASA.UI.Tests.csproj", "{93877FFA-2F2A-408F-8B40-FC0293DBB190}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NASA.API.Tests", "NASA.API.Tests\NASA.API.Tests.csproj", "{A497387A-285F-4CD8-91AE-4F99C43FEDC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{DA1083DA-0A17-4D77-BA36-680736D32677}"
+	ProjectSection(SolutionItems) = preProject
+		api-tests.yml = api-tests.yml
+		ui-tests.yml = ui-tests.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93877FFA-2F2A-408F-8B40-FC0293DBB190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93877FFA-2F2A-408F-8B40-FC0293DBB190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93877FFA-2F2A-408F-8B40-FC0293DBB190}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A497387A-285F-4CD8-91AE-4F99C43FEDC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A497387A-285F-4CD8-91AE-4F99C43FEDC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A497387A-285F-4CD8-91AE-4F99C43FEDC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A497387A-285F-4CD8-91AE-4F99C43FEDC8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA1083DA-0A17-4D77-BA36-680736D32677} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9FE99CCC-0A6D-4414-8828-AE1B089D73EF}
+	EndGlobalSection
+EndGlobal
