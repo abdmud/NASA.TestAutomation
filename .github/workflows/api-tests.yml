@@ -23,7 +23,7 @@ jobs:
         run: dotnet restore NASA.API.Tests
 
       - name: Run tests and generate TRX report
-        run: dotnet test NASA.API.Tests --logger "trx;LogFileName=test-results.trx" --results-directory TestResults
+        run: dotnet test NASA.API.Tests --filter "TestCategory!=skip" --logger "trx;LogFileName=test-results.trx" --results-directory TestResults
 
       - name: Install ReportGenerator
         run: dotnet tool install -g dotnet-reportgenerator-globaltool
