@@ -10,16 +10,16 @@ This project automates UI testing for the NASA DONKI sign up using:
 ## Project Structure
 
 NASA.UI.Tests/
-├── Pages/
-│ └── SignUpPage.cs # Page Object Models for Sign Up page
-├── Features/
-│ └── SignUp.feature # Feature file with Gherkin scenarios
-├── Steps/
-│ └── SignUpSteps.cs # Step definitions linked to Gherkin steps
-├── Hooks/
-│ └── Hooks.cs # Hooks for setup and teardown
-├── playwright.runsettings # Config for Playwright execution mode
-└── README.md
+-- Pages/
+----- SignUpPage.cs # Page Object Models for Sign Up page
+-- Features/
+----- SignUp.feature # Feature file with Gherkin scenarios
+-- Steps/
+----- SignUpSteps.cs # Step definitions linked to Gherkin steps
+-- Hooks/
+----- Hooks.cs # Hooks for setup and teardown
+-- playwright.runsettings # Config for Playwright execution mode
+-- README.md
 
 ## Prerequisites
 - .NET 8 SDK

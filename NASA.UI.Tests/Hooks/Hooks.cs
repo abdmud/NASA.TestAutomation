@@ -31,7 +31,14 @@ namespace NASA.UI.Tests.Hooks
         [BeforeScenario]
         public async Task BeforeScenario()
         {
-            var contextBrowser = await _browser.NewContextAsync();
+            var contextBrowser = await _browser.NewContextAsync( new BrowserNewContextOptions 
+            {
+                ViewportSize = new ViewportSize
+                {
+                    Width = 1920,
+                    Height = 1080
+                }
+            });
             _page = await contextBrowser.NewPageAsync();
             _context["Page"] = _page;
         }

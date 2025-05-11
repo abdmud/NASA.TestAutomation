@@ -2,7 +2,7 @@
 <RunSettings>
   <RunConfiguration>
     <EnvironmentVariables>
-      <PLAYWRIGHT_HEADLESS>false</PLAYWRIGHT_HEADLESS>
+      <HEADLESS>false</HEADLESS>
     </EnvironmentVariables>
   </RunConfiguration>
 </RunSettings>

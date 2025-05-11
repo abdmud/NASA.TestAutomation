@@ -10,21 +10,17 @@ This project contains automated tests for NASA's DONKI API endpoints (`CME`, `FL
 ## Project structure
 
 NASA.API.Tests/
-│
-├── Client/
-│ └── DonkiApiClient.cs # Handles API requests
-│
-├── Features/
-│ └── CME.feature # Feature files with BDD scenarios
-│ └── FLR.feature
-|
-├── Steps/
-│ ├── CMESteps.cs # Step definitions for CME
-│ ├── FLRSteps.cs # (Optional) Steps for FLR
-│ └── SharedSteps.cs # Shared step definitions (e.g., common assertions)
-│
-├── NASA.API.Tests.csproj # Project configuration and NuGet packages
-└── README.md
+
+-- Client/
+---- DonkiApiClient.cs # Handles API requests
+-- Features/
+---- CME.feature # Feature files with BDD scenarios
+---- FLR.feature
+-- Steps/
+---- CMESteps.cs # Step definitions for CME
+---- FLRSteps.cs # (Optional) Steps for FLR
+---- SharedSteps.cs # Shared step definitions (e.g., common assertions)
+-- README.md
 
 ## Prerequisites
 

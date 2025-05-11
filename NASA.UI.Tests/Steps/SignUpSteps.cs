@@ -26,9 +26,6 @@ public class SignUpSteps
     [When("I fill in the sign up form with valid data")]
     public async Task WhenIFillInTheSignUpFormWithValidData()
     {
-        var email = "first@last.com";
-        _context["Email"] = email;
-
         await _signupPage.CompleteSignUpFormAsync(FirstName, LastName, Email);
     }
 
