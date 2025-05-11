@@ -25,13 +25,21 @@ jobs:
       - name: Run tests and generate TRX report
         run: dotnet test NASA.API.Tests --filter "TestCategory!=skip" --logger "trx;LogFileName=test-results.trx" --results-directory TestResults
 
-      - name: Install ReportGenerator
+      - name: Publish test results to GitHub Actions
+        uses: dorny/test-reporter@v1
+        if: always()  # Run even if tests fail
+        with:
+          name: API Test Results
+          path: TestResults/test-results.trx
+          reporter: dotnet-trx
+
+      - name: Install ReportGenerator (optional)
         run: dotnet tool install -g dotnet-reportgenerator-globaltool
 
-      - name: Generate HTML report
+      - name: Generate HTML report (optional)
         run: reportgenerator -reports:TestResults/test-results.trx -targetdir:TestResults/html -reporttypes:Html
 
-      - name: Upload test report artifact
+      - name: Upload HTML report artifact (optional)
         uses: actions/upload-artifact@v4
         with:
           name: api-test-report
